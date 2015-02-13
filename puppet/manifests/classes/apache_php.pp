@@ -13,8 +13,9 @@ class apache_php {
   apache::mod{'rewrite': }
   apache::mod{'proxy_http': }
 
-  package { php5:
-    ensure => installed,
+  ppa_package { 'php5':
+    ppa => 'ppa:ondrej/php5-oldstable',
+    package => 'php5',
   }
   package { ['php5-mysql', 'php5-imap', 'php5-gd', 'php5-dev', 'php-pear', 'php5-curl', 'php5-cli', 'php5-common']:
     ensure => installed,
