@@ -12,5 +12,6 @@ class devel {
     command_cwd => "/tmp",
     command_unless => 'test -x /usr/local/bin/composer',
     verbose     => false,
+    require => Package['php5'],
   }
 }
